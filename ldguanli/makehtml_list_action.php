@@ -94,7 +94,7 @@ if(!empty($tid))
     }
     if($cfg_Cs[$tid][1]>0)
     {
-        file_put_contents('20171114_ledou.txt','777\r\n',FILE_APPEND);
+        file_put_contents('20171114_ledou.txt','777\r\n',FILE_APPEND);//
         require_once(DEDEINC."/arc.listview.class.php");
         file_put_contents('20171114_ledou.txt','listview\r\n',FILE_APPEND);
         $lv = new ListView($tid);
