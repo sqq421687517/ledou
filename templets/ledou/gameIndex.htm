@@ -1,0 +1,484 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8">
+    <title>{dede:field.seotitle /}</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="{dede:field.keywords /}" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <meta name="description" content="{dede:field.description /}" />
+    <meta property="wb:webmaster" content="52b209e0d7de4dd4" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="{dede:type}[field:siteurl /]{/dede:type}/1710files/css/main.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="http://www.idreamsky.com/js/jquery-1.8.2.min.js"></script>
+</head>
+
+<body tid="{dede:field.typeid function="GetParentTypename(@me)"/}">
+{dede:include filename="ledou/commom_paihangbang.html"/}
+<div class="wrap">
+    <!--专区顶部固定-->
+    {dede:include filename="ledou/commom_top.html"/}
+    <!--二维码-->
+    {dede:include filename="ledou/commom_erweima.html"/}
+    <!--主要内容-->
+    <div class="main">
+        {dede:include filename="ledou/commom_video.html"/}
+        <div class="flashbox lt">
+            <div class="flash">
+                <ul class="picbox">
+                    {dede:arclist typename='幻灯' getall='1' orderby='pubdate' limit='0,4'}
+                    <li><a href="[field:arcurl/]" target="_blank"><img width='577' height='288' src="[field:litpic /]" /></a></li>
+                    {/dede:arclist}
+                </ul>
+                <dl class="btnbox">
+                    {dede:arclist typename='幻灯' getall='1' orderby='pubdate' limit='0,4'}
+                    <dd>[field:title /]</dd>
+                    {/dede:arclist}
+                    <!-- <dd class="cur">全新版本“结缘双修”</dd> -->
+                    <!-- <dd>全新版本“结缘双修”</dd> -->
+                    <!-- <dd>全新版本“结缘双修”</dd> -->
+                    <!-- <dd>全新版本“结缘双修”</dd> -->
+                </dl>
+            </div>
+            <div class="rili cc">
+                <div class="r_left lt">
+                    <strong>活动日历</strong>
+                    <script>
+                        var idate = new Date();
+                        var im = idate.getMonth()+1;
+                        var id = idate.getDate();
+                        var iw = idate.getDay();
+                        var ws = ['周日','周一','周二','周三','周四','周五','周六'];
+                        var iw = ws[iw];
+                        document.write('<p>'+im+'月'+id+'日</p><p>'+iw+'</p>');
+                    </script>
+                </div>
+                <div class="r_right rt">
+                    <dl class="hdbtn">
+                        <dd id='prev'> < </dd>
+                        <dd id='next'> > </dd>
+                    </dl>
+                    <div class="hdbox">
+                        <ul>
+                            {dede:arclist getall='1' today=1 typename='活动日历' orderby='pubdate' limit='0,10'}
+                            <li style='display:[field:global.autoindex function='if(@me>2){ @me="none;"; }'/]'>
+                                <a href="[field:arcurl/]" target="_blank"><img width='89' height='48' src="[field:litpic /]" /></a>
+                                <p> <a href="[field:arcurl/]" target="_blank">[field:title /]</a></p>
+                            </li>
+                            {/dede:arclist}
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="newbox rt">
+            <strong>今日热点</strong>
+            <div class="todayhot cc">
+                {dede:arclist titlelen=100 today=1 getall='1' noflag='f' typename='今日热点' orderby='pubdate' limit='0,1' }
+                <img src="[field:litpic /]" />
+                <h1><a href="[field:arcurl/]" target="_blank">[field:title/]</a></h1>
+                {/dede:arclist}
+            </div>
+            <div class="textnav">
+                <strong>新闻资讯</strong>
+                <ul>
+                    <li class="cur">最新<i></i></li>
+                    <li>新闻<i></i></li>
+                    <li>公告<i></i></li>
+                    <li>攻略<i></i></li>
+                    <li>论坛<i></i></li>
+                </ul>
+            </div>
+            <ul class="textlink" style="display:block;">
+                {dede:arclist getall='1' noflag='f' typename='当前栏目下所有文章' orderby='pubdate' limit='0,7' }
+                <li><a href="[field:arcurl/]" target="_blank"><i>[field:pubdate function='strftime("%m-%d",@me)'/]</i><span>【[field:typename /]】</span>[field:title/]</a></li>
+                {/dede:arclist}
+            </ul>
+            <ul class="textlink">
+                {dede:arclist getall='1' typename='新闻中心' orderby='pubdate' limit='0,7' noflag='f'}
+                <li><a href="[field:arcurl/]" target="_blank"><i>[field:pubdate function='strftime("%m-%d",@me)'/]</i><span>【[field:typename /]】</span>[field:title/]</a></li>
+                {/dede:arclist}
+            </ul>
+            <ul class="textlink">
+                {dede:arclist getall='1' typename='官方公告' orderby='pubdate' limit='0,7' noflag='f'}
+                <li><a href="[field:arcurl/]" target="_blank"><i>[field:pubdate function='strftime("%m-%d",@me)'/]</i><span>【[field:typename /]】</span>[field:title/]</a></li>
+                {/dede:arclist}
+            </ul>
+            <ul class="textlink">
+                {dede:arclist getall='1' typename='攻略心得' orderby='pubdate' limit='0,7' noflag='f'}
+                <li><a href="[field:arcurl/]" target="_blank"><i>[field:pubdate function='strftime("%m-%d",@me)'/]</i><span>【[field:typename /]】</span>[field:title/]</a></li>
+                {/dede:arclist}
+            </ul>
+            <ul class="textlink">
+                {dede:arclist getall='1' typename='官方论坛' orderby='pubdate' limit='0,7' noflag='f'}
+                <li><a href="[field:arcurl/]" target="_blank"><i>[field:pubdate function='strftime("%m-%d",@me)'/]</i><span>【[field:typename /]】</span>[field:title/]</a></li>
+                {/dede:arclist}
+            </ul>
+        </div>
+        <div class="cl"></div>
+        <h2 class="zq_title">游戏特色</h2>
+        <ul class="play_ts cc">
+            <li class="cur">
+                <p>{dede:field.typeid function="getTypeConfig(@me,'游戏特色切换图1小图')"/}</p>
+                {dede:field.typeid function="getTypeConfig(@me,'游戏特色切换图1大图')"/}
+            </li>
+            <li>
+                <p>{dede:field.typeid function="getTypeConfig(@me,'游戏特色切换图2小图')"/}</p>
+                {dede:field.typeid function="getTypeConfig(@me,'游戏特色切换图2大图')"/}
+            </li>
+            <li>
+                <p>{dede:field.typeid function="getTypeConfig(@me,'游戏特色切换图3小图')"/}</p>
+                {dede:field.typeid function="getTypeConfig(@me,'游戏特色切换图3大图')"/}
+            </li>
+            <li>
+                <p>{dede:field.typeid function="getTypeConfig(@me,'游戏特色切换图4小图')"/}</p>
+                {dede:field.typeid function="getTypeConfig(@me,'游戏特色切换图4大图')"/}
+            </li>
+            <li>
+                <p>{dede:field.typeid function="getTypeConfig(@me,'游戏特色切换图5小图')"/}</p>
+                {dede:field.typeid function="getTypeConfig(@me,'游戏特色切换图5大图')"/}
+            </li>
+        </ul>
+    </div>
+</div>
+<h2 class="zq_title">门派角色</h2>
+<div class="wrap2">
+    <div class="main qhbox">
+        <dl class="qh_btn">
+            <dd class="b1 cur"><i></i></dd>
+            <dd class="b2"><i></i></dd>
+            <dd class="b3"><i></i></dd>
+            <dd class="b4"><i></i></dd>
+        </dl>
+        <div class="role_con in yj" style="display:block;">
+            <div class="name"></div>
+            <p>{dede:field.typeid function="getTypeConfig(@me,'门派角色角色1简介')"/}</p>
+            <div class="wuqi"><i></i>{dede:field.typeid function="getTypeConfig(@me,'门派角色角色1武器1')"/}    {dede:field.typeid function="getTypeConfig(@me,'门派角色角色1武器2')"/}</div>
+            <div class="texing"><i></i>{dede:field.typeid function="getTypeConfig(@me,'门派角色角色1特性')"/}</div>
+            <div class="caozuo"><i></i><span><em style="width:{dede:field.typeid function="getTypeConfig(@me,'门派角色角色1操作难度')"/}%;"></em></span></div>
+            <div class="humous"></div>
+            <div class="table">
+                <div class="tablebtn cc">
+                    <div class="qj cur">{dede:field.typeid function="getTypeConfig(@me,'门派角色角色1武器1')"/}</div>
+                    <div class="zj">{dede:field.typeid function="getTypeConfig(@me,'门派角色角色1武器2')"/}</div>
+                </div>
+                <div class="table_con">
+                    {dede:field.typeid function="getTypeConfig(@me,'门派角色角色1武器1图片')"/}
+                    {dede:field.typeid function="getTypeConfig(@me,'门派角色角色1武器2图片')"/}
+                </div>
+            </div>
+        </div>
+        <div class="role_con longying">
+            <div class="name"></div>
+            <p>{dede:field.typeid function="getTypeConfig(@me,'门派角色角色2简介')"/}</p>
+            <div class="wuqi"><i></i>{dede:field.typeid function="getTypeConfig(@me,'门派角色角色2武器1')"/}    {dede:field.typeid function="getTypeConfig(@me,'门派角色角色2武器2')"/}</div>
+            <div class="texing"><i></i>{dede:field.typeid function="getTypeConfig(@me,'门派角色角色2特性')"/}</div>
+            <div class="caozuo"><i></i><span><em style="width:{dede:field.typeid function="getTypeConfig(@me,'门派角色角色2操作难度')"/}%;"></em></span></div>
+            <div class="humous"></div>
+            <div class="table">
+                <div class="tablebtn cc">
+                    <div class="qj cur">{dede:field.typeid function="getTypeConfig(@me,'门派角色角色2武器1')"/}</div>
+                    <div class="zj">{dede:field.typeid function="getTypeConfig(@me,'门派角色角色2武器2')"/}</div>
+                </div>
+                <div class="table_con">
+                    {dede:field.typeid function="getTypeConfig(@me,'门派角色角色2武器1图片')"/}
+                    {dede:field.typeid function="getTypeConfig(@me,'门派角色角色2武器2图片')"/}
+                </div>
+            </div>
+        </div>
+        <div class="role_con hualing">
+            <div class="name"></div>
+            <p>{dede:field.typeid function="getTypeConfig(@me,'门派角色角色3简介')"/}</p>
+            <div class="wuqi"><i></i>{dede:field.typeid function="getTypeConfig(@me,'门派角色角色3武器1')"/}    {dede:field.typeid function="getTypeConfig(@me,'门派角色角色3武器2')"/}</div>
+            <div class="texing"><i></i>{dede:field.typeid function="getTypeConfig(@me,'门派角色角色3特性')"/}</div>
+            <div class="caozuo"><i></i><span><em style="width:{dede:field.typeid function="getTypeConfig(@me,'门派角色角色3操作难度')"/}%;"></em></span></div>
+            <div class="humous"></div>
+            <div class="table">
+                <div class="tablebtn cc">
+                    <div class="qj cur">{dede:field.typeid function="getTypeConfig(@me,'门派角色角色3武器1')"/}</div>
+                    <div class="zj">{dede:field.typeid function="getTypeConfig(@me,'门派角色角色3武器2')"/}</div>
+                </div>
+                <div class="table_con">
+                    {dede:field.typeid function="getTypeConfig(@me,'门派角色角色3武器1图片')"/}
+                    {dede:field.typeid function="getTypeConfig(@me,'门派角色角色3武器2图片')"/}
+                </div>
+            </div>
+        </div>
+        <div class="role_con wukui">
+            <div class="name"></div>
+            <p>{dede:field.typeid function="getTypeConfig(@me,'门派角色角色4简介')"/}</p>
+            <div class="wuqi"><i></i>{dede:field.typeid function="getTypeConfig(@me,'门派角色角色4武器1')"/}    {dede:field.typeid function="getTypeConfig(@me,'门派角色角色4武器2')"/}</div>
+            <div class="texing"><i></i>{dede:field.typeid function="getTypeConfig(@me,'门派角色角色4特性')"/}</div>
+            <div class="caozuo"><i></i><span><em style="width:{dede:field.typeid function="getTypeConfig(@me,'门派角色角色4操作难度')"/}%;"></em></span></div>
+            <div class="humous"></div>
+            <div class="table">
+                <div class="tablebtn cc">
+                    <div class="qj cur">{dede:field.typeid function="getTypeConfig(@me,'门派角色角色4武器1')"/}</div>
+                    <div class="zj">{dede:field.typeid function="getTypeConfig(@me,'门派角色角色4武器2')"/}</div>
+                </div>
+                <div class="table_con">
+                    {dede:field.typeid function="getTypeConfig(@me,'门派角色角色4武器1图片')"/}
+                    {dede:field.typeid function="getTypeConfig(@me,'门派角色角色4武器2图片')"/}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--游戏资料和玩家攻略-->
+<div class="wrap3">
+    <div class="main">
+        <div class="play_zl lt">
+            <h2 class="zq_title yxzl">游戏资料</h2>
+            <div class="zlbox">
+                <dl class="gl_list">
+                    <dt>
+                        <a href="javascript:void(0);" target="">
+                            最新
+                            <i><em>最新</em></i>
+                        </a>
+                    </dt>
+                    <dd>
+                        {dede:arclist getall='1' typename='最新资料' orderby='pubdate' limit='0,3'}
+                        <a href="[field:arcurl/]" target="_blank">[field:title/]</a>
+                        {/dede:arclist}
+                    </dd>
+                </dl>
+                <dl class="gl_list">
+                    <dt>
+                        <a href="javascript:void(0);" target="">
+                            门派
+                            <i><em>门派</em></i>
+                        </a>
+                    </dt>
+                    <dd>
+                        {dede:arclist getall='1' typename='门派资料' orderby='pubdate' limit='0,3'}
+                        <a href="[field:arcurl/]" target="_blank">[field:title/]</a>
+                        {/dede:arclist}
+                    </dd>
+                </dl>
+                <dl class="gl_list">
+                    <dt>
+                        <a href="javascript:void(0);" target="">
+                            副本
+                            <i><em>副本</em></i>
+                        </a>
+                    </dt>
+                    <dd>
+                        {dede:arclist getall='1' typename='副本资料' orderby='pubdate' limit='0,3'}
+                        <a href="[field:arcurl/]" target="_blank">[field:title/]</a>
+                        {/dede:arclist}
+                    </dd>
+                </dl>
+                <dl class="gl_list more">
+                    <dt>
+                        <a href="javascript:void(0);" target="">
+                            更多
+                            <i><em>更多</em></i>
+                        </a>
+                    </dt>
+                    <dd>
+                        {dede:arclist getall='1' typename='更多资料' orderby='pubdate' limit='0,6'}
+                        <a href="[field:arcurl/]" target="_blank">[field:title/]</a>
+                        {/dede:arclist}
+                    </dd>
+                </dl>
+            </div>
+            <img src="{dede:type}[field:siteurl /]{/dede:type}/1710files/images/pic1.png" />
+        </div>
+        <div class="player_gl rt">
+            <h2 class="zq_title wjgl">玩家攻略</h2>
+            <div class="zlbox">
+                <dl class="gl_list">
+                    <dt>
+                        <a href="javascript:void(0);" target="">
+                            推荐
+                            <i><em>推荐</em></i>
+                        </a>
+                    </dt>
+                    <dd>
+                        {dede:arclist getall='1' typename='推荐攻略' orderby='pubdate' limit='0,3'}
+                        <a href="[field:arcurl/]" target="_blank">[field:title/]</a>
+                        {/dede:arclist}
+                    </dd>
+                </dl>
+                <dl class="gl_list">
+                    <dt>
+                        <a href="javascript:void(0);" target="">
+                            新手
+                            <i><em>新手</em></i>
+                        </a>
+                    </dt>
+                    <dd>
+                        {dede:arclist getall='1' typename='新手攻略' orderby='pubdate' limit='0,3'}
+                        <a href="[field:arcurl/]" target="_blank">[field:title/]</a>
+                        {/dede:arclist}
+                    </dd>
+                </dl>
+                <dl class="gl_list growUp">
+                    <dt>
+                        <a href="javascript:void(0);" target="">
+                            成长
+                            <i><em>成长</em></i>
+                        </a>
+                    </dt>
+                    <dd>
+                        {dede:arclist getall='1' typename='进阶攻略' orderby='pubdate' limit='0,4'}
+                        <a href="[field:arcurl/]" target="_blank">[field:title/]</a>
+                        {/dede:arclist}
+                    </dd>
+                </dl>
+                <dl class="gl_list more">
+                    <dt>
+                        <a href="javascript:void(0);" target="">
+                            更多
+                            <i><em>更多</em></i>
+                        </a>
+                    </dt>
+                    <dd>
+                        {dede:arclist getall='1' typename='更多攻略' orderby='pubdate' limit='0,6'}
+                        <a href="[field:arcurl/]" target="_blank">[field:title/]</a>
+                        {/dede:arclist}
+                    </dd>
+                </dl>
+            </div>
+            <img src="{dede:type}[field:siteurl /]{/dede:type}/1710files/images/pic2.png" />
+        </div>
+        <div class="cl"></div>
+    </div>
+</div>
+<!--游戏视频仙界图鉴-->
+<div class="wrap4">
+    <div class="main cc">
+        <div class="yxsp lt">
+            <h2 class="zq_title yxsp">游戏视频</h2>
+            <ul class="vlist">
+                <li class="cur">最新视频</li>
+                <li>官方视频</li>
+                <li>副本视频</li>
+                <li>PK视频</li>
+            </ul>
+            <ul class="vlistcon" style="display:block;">
+                {dede:arclist getall='1' typename='游戏视频' orderby='pubdate' limit='0,4'}
+                <li>
+                    <a href="[field:arcurl/]" target="_blank">
+                        <i></i>
+                        <code></code>
+                        <img width="243" height="148" src="[field:litpic/]" />
+                        <p>[field:title/]</p>
+                    </a>
+                </li>
+                {/dede:arclist}
+            </ul>
+            <ul class="vlistcon">
+                {dede:arclist getall='1' typename='官方视频' orderby='pubdate' limit='0,4'}
+                <li>
+                    <a href="[field:arcurl/]" target="_blank">
+                        <i></i>
+                        <code></code>
+                        <img width="243" height="148" src="[field:litpic/]" />
+                        <p>[field:title/]</p>
+                    </a>
+                </li>
+                {/dede:arclist}
+            </ul>
+            <ul class="vlistcon">
+                {dede:arclist getall='1' typename='副本视频' orderby='pubdate' limit='0,4'}
+                <li>
+                    <a href="[field:arcurl/]" target="_blank">
+                        <i></i>
+                        <code></code>
+                        <img width="243" height="148" src="[field:litpic/]" />
+                        <p>[field:title/]</p>
+                    </a>
+                </li>
+                {/dede:arclist}
+            </ul>
+            <ul class="vlistcon">
+                {dede:arclist getall='1' typename='PK视频' orderby='pubdate' limit='0,4'}
+                <li>
+                    <a href="[field:arcurl/]" target="_blank">
+                        <i></i>
+                        <code></code>
+                        <img width="243" height="148" src="[field:litpic/]" />
+                        <p>[field:title/]</p>
+                    </a>
+                </li>
+                {/dede:arclist}
+            </ul>
+            <img src="{dede:type}[field:siteurl /]{/dede:type}/1710files/images/pic3.png" class="pic3" />
+        </div>
+        <div class="xjtj rt">
+            <h2 class="zq_title xjtj">仙界图鉴</h2>
+            <ul class="vlist">
+                <li class="cur">最新图片</li>
+                <li>官方图片</li>
+                <li>副本图片</li>
+                <li>美女图片</li>
+            </ul>
+            <ul class="vlistcon" style="display:block;">
+                {dede:arclist getall='1' typename='游戏图鉴' orderby='pubdate' limit='0,4'}
+                <li>
+                    <a href="[field:arcurl/]" target="_blank">
+                        <i></i>
+                        <code></code>
+                        <img width="243" height="148" src="[field:litpic/]" />
+                        <p>[field:title/]</p>
+                    </a>
+                </li>
+                {/dede:arclist}
+            </ul>
+            <ul class="vlistcon">
+                {dede:arclist getall='1' typename='官方图集' orderby='pubdate' limit='0,4'}
+                <li>
+                    <a href="[field:arcurl/]" target="_blank">
+                        <i></i>
+                        <code></code>
+                        <img width="243" height="148" src="[field:litpic/]" />
+                        <p>[field:title/]</p>
+                    </a>
+                </li>
+                {/dede:arclist}
+            </ul>
+            <ul class="vlistcon">
+                {dede:arclist getall='1' typename='副本图集' orderby='pubdate' limit='0,4'}
+                <li>
+                    <a href="[field:arcurl/]" target="_blank">
+                        <i></i>
+                        <code></code>
+                        <img width="243" height="148" src="[field:litpic/]" />
+                        <p>[field:title/]</p>
+                    </a>
+                </li>
+                {/dede:arclist}
+            </ul>
+            <ul class="vlistcon">
+                {dede:arclist getall='1' typename='美女玩家' orderby='pubdate' limit='0,4'}
+                <li>
+                    <a href="[field:arcurl/]" target="_blank">
+                        <i></i>
+                        <code></code>
+                        <img width="243" height="148" src="[field:litpic/]" />
+                        <p>[field:title/]</p>
+                    </a>
+                </li>
+                {/dede:arclist}
+            </ul>
+            <img src="{dede:type}[field:siteurl /]{/dede:type}/1710files/images/pic4.png" class="pic4" />
+        </div>
+    </div>
+</div>
+
+<!--此乃底部-->
+{dede:include filename="ledou/commom_footer.html"/}
+<!--漂浮-->
+{dede:include filename="ledou/commom_rightNav.html"/}
+
+
+<script language="javascript" src="{dede:type}[field:siteurl /]{/dede:type}/1710files/js/index.js"></script>
+
+</body>
+</html>

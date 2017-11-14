@@ -1,0 +1,15 @@
+<h2 class="art_t"><span><a href="#" target="_blank"></a></span>最新资讯</h2>
+<ul class="art_news">
+  {dede:arclist typename='新闻中心' orderby='pubdate' limit='0,6'}
+  <li><a href="[field:arcurl /]" target="_blank">【[field:typename /]】[field:title /]</a></li>
+  {/dede:arclist}
+</ul>
+{dede:arclist typename='最新版本' orderby='pubdate' limit='0,1'}
+<div class="art_pic art_pic1"><a href="[field:arcurl]" target='_blank'><img width='318' height='148' src="[field:litpic /]" /></a></div>
+{/dede:arclist}
+{dede:arclist typename='最新版本' orderby='pubdate' limit='1,1'}
+<div class="art_pic art_pic2"><a href="[field:arcurl]" target='_blank'><img width='318' height='170' src="[field:litpic /]" /></a></div>
+{/dede:arclist}
+{dede:arclist typename='最新版本' orderby='pubdate' limit='2,1'}
+<div class="art_pic art_pic3"><a href="[field:arcurl]" target='_blank'><img width='318' height='143' src="[field:litpic /]" /></a></div>
+{/dede:arclist}
