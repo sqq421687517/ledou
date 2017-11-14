@@ -1,0 +1,40 @@
+<?php
+$z[0]=Array("field","",387,407);
+$z[0][4]['name']="title";
+$z[1]=Array("field","",486,509);
+$z[1][4]['name']="keywords";
+$z[2]=Array("field","",617,643);
+$z[2][4]['name']="description";
+$z[3]=Array("type","[field:siteurl /]",807,847);
+$z[4]=Array("field","",1025,1079);
+$z[4][4]['name']="typeid";
+$z[4][4]['function']="GetParentTypename(@me)";
+$z[5]=Array("include","",1083,1139);
+$z[5][4]['filename']="ledou/commom_paihangbang.html";
+$z[6]=Array("include","",1195,1243);
+$z[6][4]['filename']="ledou/commom_top.html";
+$z[7]=Array("include","",1317,1367);
+$z[7][4]['filename']="ledou/commom_video.html";
+$z[8]=Array("field","",1462,1492);
+$z[8][4]['name']="typename";
+$z[9]=Array("field","",1546,1576);
+$z[9][4]['name']="position";
+$z[10]=Array("field","",1621,1648);
+$z[10][4]['name']="title";
+$z[11]=Array("field","",1698,1763);
+$z[11][4]['name']="pubdate";
+$z[11][4]['function']="strftime('%Y-%m-%d',@me)";
+$z[12]=Array("field","\r\n                        <img style=\"display: inline;padding-top: 10%;padding-bottom: 10%;\" src=\"[field:imgsrc function='str_replace(\"ledou/uploads\",\"uploads\",@me)'/]\" alt=\"[field:alttext /]\" />\r\n                    ",2782,3039);
+$z[12][4]['name']="imgurls";
+$z[13]=Array("pagebreak","",3859,3877);
+$z[14]=Array("include","",3962,4014);
+$z[14][4]['filename']="ledou/commom_erweima.html";
+$z[15]=Array("include","",4028,4081);
+$z[15][4]['filename']="ledou/commom_rightarc.html";
+$z[16]=Array("include","",4142,4193);
+$z[16][4]['filename']="ledou/commom_footer.html";
+$z[17]=Array("include","",4210,4263);
+$z[17][4]['filename']="ledou/commom_rightNav.html";
+$z[18]=Array("type","[field:siteurl /]",4304,4344);
+
+?>

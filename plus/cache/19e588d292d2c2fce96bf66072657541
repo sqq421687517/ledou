@@ -1,0 +1,6 @@
+a:3:{s:5:"pages";s:381:"<a class='pages_gray'>首页 
+</a><a class='pages_gray current'>1</a>
+<a class='pages_gray vlink' style='cursor:pointer' hrefs='/plus/ajaxvideo.php?pageno=2'>2</a>
+<a class='pages_gray nextPage vlink' style='cursor:pointer' hrefs='/plus/ajaxvideo.php?pageno=2'>下页</a> 
+<a class='pages_gray endPage vlink' style='cursor:pointer' hrefs='/plus/ajaxvideo.php?pageno=2'>末页</a> 
+";s:7:"content";a:1:{i:0;a:5:{s:2:"id";s:1:"8";s:5:"title";s:12:"个地方官";s:10:"shorttitle";s:0:"";s:6:"litpic";s:16:"http://ledou.com";s:3:"url";s:46:"http://fr.uu.com/shipin/guanfangshipin/8.shtml";}}s:5:"total";s:1:"2";}

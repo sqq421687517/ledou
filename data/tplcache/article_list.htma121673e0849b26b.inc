@@ -1,0 +1,42 @@
+<?php
+$z[0]=Array("field","",387,410);
+$z[0][4]['name']="seotitle";
+$z[1]=Array("field","",489,512);
+$z[1][4]['name']="keywords";
+$z[2]=Array("field","",620,646);
+$z[2][4]['name']="description";
+$z[3]=Array("type","[field:siteurl /]",810,850);
+$z[4]=Array("field","",1028,1082);
+$z[4][4]['name']="typeid";
+$z[4][4]['function']="GetParentTypename(@me)";
+$z[5]=Array("include","",1086,1142);
+$z[5][4]['filename']="ledou/commom_paihangbang.html";
+$z[6]=Array("include","",1198,1246);
+$z[6][4]['filename']="ledou/commom_top.html";
+$z[7]=Array("include","",1320,1370);
+$z[7][4]['filename']="ledou/commom_video.html";
+$z[8]=Array("field","",1466,1496);
+$z[8][4]['name']="typename";
+$z[9]=Array("channel","\r\n                    <li><a href='[field:typelink/]'>[field:typename/]</a> </li>\r\n                    ",1753,1966);
+$z[9][4]['row']="4";
+$z[9][4]['currentstyle']="<li class='cur'><a href='~typelink~'>~typename~</a> </li>";
+$z[10]=Array("field","",2034,2064);
+$z[10][4]['name']="position";
+$z[11]=Array("list","\r\n                <li>\r\n                    <h2><a href=\"[field:arcurl /]\" target=\"_blank\">【[field:typename /]】[field:title /]</a></h2>\r\n                    <p>[field:description /]<i>[field:pubdate function=\"strftime('%m-%d',@me)\" /]</i></p>\r\n                </li>\r\n                ",2148,2506);
+$z[11][4]['orderby']="pubdate";
+$z[11][4]['pagesize']="10";
+$z[11][4]['orderway']="desc";
+$z[12]=Array("pagelist","",2576,2642);
+$z[12][4]['listsize']="5";
+$z[12][4]['listitem']="index,pre,pageno,next,end";
+$z[13]=Array("include","",3143,3195);
+$z[13][4]['filename']="ledou/commom_erweima.html";
+$z[14]=Array("include","",3209,3262);
+$z[14][4]['filename']="ledou/commom_rightarc.html";
+$z[15]=Array("include","",3323,3374);
+$z[15][4]['filename']="ledou/commom_footer.html";
+$z[16]=Array("include","",3391,3444);
+$z[16][4]['filename']="ledou/commom_rightNav.html";
+$z[17]=Array("type","[field:siteurl /]",3485,3525);
+
+?>

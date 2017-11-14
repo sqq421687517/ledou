@@ -1,0 +1,1 @@
+<div class="art_pic art_pic2"><a href="[field:arcurl]" target='_blank'><img width='318' height='170' src="[field:litpic /]" /></a></div>
